@@ -31,7 +31,6 @@ cursor.execute("""
 """)
 conn.commit()
 
-# ===== НАСТРОЕНИЯ =====
 MOODS = {
     "flirty": {
         "emoji": "😏",
@@ -160,10 +159,6 @@ async def get_ai_reply(user_id: int, user_message: str) -> str:
     conn.commit()
     return reply
 
-# ==========================================
-#  ОБРАБОТЧИКИ (ВСЕ ОТВЕТЫ ГЕНЕРИРУЮТСЯ ЧЕРЕЗ DEEPSEEK)
-# ==========================================
-
 @dp.message(F.photo)
 async def handle_photo(message: Message):
     user_id = message.from_user.id
@@ -258,7 +253,6 @@ async def random_sender():
             if random.random() > send_chance:
                 continue
             
-            # Генерируем уникальный вопрос через DeepSeek
             if current_hour < 6 or current_hour >= 23:
                 context = "It's late at night. Send a spontaneous, slightly intimate or mysterious message to start a conversation."
             else:
