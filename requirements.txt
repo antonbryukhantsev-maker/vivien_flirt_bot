@@ -1,4 +1,0 @@
-aiogram
-openai
-pydantic
-typing-extensions
