@@ -1,3 +1,2 @@
-aiogram
-openai
-pydantic
+openai>=1.0.0
+aiogram>=3.0.0
